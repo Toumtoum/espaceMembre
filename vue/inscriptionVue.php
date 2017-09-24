@@ -18,20 +18,34 @@
 
     </head>
     <body>
-      <div class="container">
-        <form action="../controleur/inscription.php" class="form-signin" method="post"> <!--ACTION VERS CONTROLEUR-->
-          <h2 class="form-signin-heading">INSCRIPTION</h2>
-          <label><b>Pseudo</b></label>
-          <input type="text" name="pseudo" class="form-control" required>
-          <label><b>E-mail</b></label>
-          <input type="email" name="email" class="form-control" required>
-          <label><b>Mot de passe</b></label>
-          <input type="password" name="password" class="form-control" required>
-          <label><b>Verifier votre mot de passe</b></label>
-          <input type="password" name="verifPassword" class="form-control" required><hr/>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          <form class="form-signin" method="post">
+            <h2 class="form-signin-heading">INSCRIPTION</h2>
+            <label><b>Pseudo</b></label>
+            <input type="text" name="pseudo" class="form-control" required>
+            <label><b>E-mail</b></label>
+            <input type="email" name="email" class="form-control" required>
+            <label><b>Mot de passe</b></label>
+            <input type="password" name="password" class="form-control" required>
+            <label><b>Verifier votre mot de passe</b></label>
+            <input type="password" name="verifPassword" class="form-control" required><hr/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          </form>
+        </div>
+
+        <div class="col-xs-6 col-lg-4">
+          <form class="form-signin" method="post">
+            <h2 class="form-signin-heading">DÉJÀ INSCRIT</h2>
+            <label><b>Pseudo</b></label>
+            <input type="text" name="pseudoUser" class="form-control" value="<?php if (isset($_COOKIE)){echo "";}else {echo $_COOKIE['cookiePseudo'];} ?>"required>
+            <label><b>Mot de passe</b></label>
+            <input type="password" name="passwordUser" class="form-control" value="<?php if (isset($_COOKIE)){echo "";}else {echo $_COOKIE['cookiePassword'];} ?>"required><hr/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          </form>
+        </div>
       </div>
+
 
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
